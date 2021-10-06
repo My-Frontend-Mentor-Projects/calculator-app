@@ -1,0 +1,62 @@
+:root {
+    --mainBackground: #{$veryDarkDesaturatedBlue};
+    --textTitle: #{$white};
+    --keypadBackground: #{$veryDarkDesaturatedBlue2};
+    --screenBackground: #{$veryDarkDesaturatedBlue3};
+    --delKeyBackground: #{$desaturatedDarkBlue};
+    --delKeyShadow: #{$desaturatedDarkBlue2};
+    --equalKeyBackground: #{$red};
+    --equalKeyShadow: #{$darkRed};
+    --mathKeyBackground: #{$lightGrayishOrange};
+    --mathKeyShadow: #{$grayishOrange};
+    --textKeypad1: #{$darkGrayishBlue};
+    --textKeypad2: #{$white};
+}
+
+// Blue
+html[data-theme='1'] {
+    --mainBackground: #{$veryDarkDesaturatedBlue};
+    --textTitle: #{$white};
+    --keypadBackground: #{$veryDarkDesaturatedBlue2};
+    --screenBackground: #{$veryDarkDesaturatedBlue3};
+    --delKeyBackground: #{$desaturatedDarkBlue};
+    --delKeyShadow: #{$desaturatedDarkBlue2};
+    --equalKeyBackground: #{$red};
+    --equalKeyShadow: #{$darkRed};
+    --mathKeyBackground: #{$lightGrayishOrange};
+    --mathKeyShadow: #{$grayishOrange};
+    --textKeypad1: #{$darkGrayishBlue};
+    --textKeypad2: #{$white};
+}
+
+// White
+html[data-theme='2'] {
+    --mainBackground: #{$lightGray};
+    --textTitle: #{$veryDarkGrayishYellow};
+    --keypadBackground: #{$grayishRed};
+    --screenBackground: #{$veryLightGray};
+    --delKeyBackground: #{$darkModerateCyan};
+    --delKeyShadow: #{$veryDarkCyan};
+    --equalKeyBackground: #{$orange};
+    --equalKeyShadow: #{$darkOrange};
+    --mathKeyBackground: #{$lightGrayishYellow};
+    --mathKeyShadow: #{$darkGrayishOrange2};
+    --textKeypad1: #{$veryDarkGrayishYellow};
+    --textKeypad2: #{$white};
+}
+
+// Purple
+html[data-theme='3'] {
+    --mainBackground: #{$veryDarkViolet1};
+    --textTitle: #{$lightYellow};
+    --keypadBackground: #{$veryDarkViolet2};
+    --screenBackground: #{$veryDarkViolet2};
+    --delKeyBackground: #{$darkViolet};
+    --delKeyShadow: #{$vividMagenta};
+    --equalKeyBackground: #{$pureCyan};
+    --equalKeyShadow: #{$softCyan};
+    --mathKeyBackground: #{$veryDarkViolet3};
+    --mathKeyShadow: #{$darkMagenta};
+    --textKeypad1: #{$lightYellow};
+    --textKeypad2: #{$white};
+}

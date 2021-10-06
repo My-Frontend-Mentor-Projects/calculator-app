@@ -1,0 +1,182 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background-color: var(--mainBackground);
+}
+
+.calculator {
+    height: 90%;
+    width: 90%;
+    max-width: 33.875rem;
+    margin: 1.875rem auto;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(3, max-content);
+    gap: 1.5rem;
+
+    @include breakpoint-up(large){
+        margin: 6.5rem auto;
+    }
+
+    div {
+        border-radius: 0.5rem;
+    }
+
+    .title, .theme-switch-container, .screen {
+        color: var(--textTitle);
+    }
+
+    .theme-switch-container{
+        grid-column: 4;
+        align-self: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+        gap: 1.375rem;
+
+        .theme-switch {
+            position: relative;
+            height: 1.625rem;
+            width: 4.5rem;
+            background-color: var(--screenBackground);
+            border-radius: 2rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .theme-numbers {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            top: -1.1rem;
+            left: 55%;
+            width: 40%;
+        }
+
+        .circle {
+            position: absolute;
+            height: 1.125rem;
+            width: 1.125rem;
+            border-radius: 50%;
+            background-color: var(--equalKeyBackground);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .theme-1 {
+            transform: translate(0.3rem, 23%);
+        }
+    
+        .theme-2 {
+            transform: translate(1.6rem, 23%);
+        }
+    
+        .theme-3 {
+            transform: translate(3rem, 23%);
+        }
+    }
+
+    .screen {
+        width: 100%;
+        grid-column: 1 / span 4;
+        background-color: var(--screenBackground);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        &-text {
+            padding: 1.625rem;
+            overflow-x: auto;
+            scrollbar-color: var(--delKeyBackground) var(--keypadBackground);
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: var(--keypadBackground);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--delKeyBackground);
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: var(--mathKeyBackground);
+            }
+
+            @include breakpoint-up(large) {
+                padding: 2.375rem;
+            }
+        }
+
+    }
+
+    .screen, .number, .operator, .decimal {
+        font-size: $fontLarge;
+    }
+
+    .keypad {
+        width: 100%;
+        grid-column: 1 / span 4;
+        padding: 1.375rem;
+        background-color: var(--keypadBackground);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1.5rem;
+
+        button {
+            padding: 1rem 1rem;
+            border-radius: 0.5rem;
+            border: 0;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(1.1);
+            }
+
+            &:active {
+                transform: translateY(1px);
+                box-shadow: 0px 0px !important;
+            }
+
+            &.reset {
+                grid-column: 1 / span 2;
+            }
+
+            &#equal {
+                background-color: var(--equalKeyBackground);
+                color: var(--textKeypad2);
+                grid-column: 3 / span 2;
+                box-shadow: 0px 4px var(--equalKeyShadow);
+            }
+    
+            &.reset, &.delete, &.equal {
+                font-size: $fontSmall;
+                color: var(--textKeypad2);
+            }
+    
+            &.number, &.decimal, &.operator {
+                color: var(--textKeypad1);
+                background-color: var(--mathKeyBackground);
+                box-shadow: 0px 4px var(--mathKeyShadow);
+            }
+
+            &.reset, &.delete {
+                background-color: var(--delKeyBackground);
+                color: var(--textKeypad2);
+                box-shadow: 0px 4px var(--delKeyShadow);
+            }
+        }
+    }
+}
