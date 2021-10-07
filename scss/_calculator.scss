@@ -91,6 +91,11 @@ body {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        height: 5.5rem;
+
+        @include breakpoint-up(large) {
+            height: 8rem;
+        }
         
         &-text {
             padding: 1.625rem;

@@ -493,6 +493,13 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 5.5rem;
+}
+
+@media (min-width: 64em) {
+  .calculator .screen {
+    height: 8rem;
+  }
 }
 
 .calculator .screen-text {
